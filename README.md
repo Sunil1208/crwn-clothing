@@ -101,3 +101,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 #### **FLUX PATTERN**
 
 > ACTION -> DISPATCHER -> STORE -> VIEW
+
+#### **INSTALL REDUX**
+
+    npm install redux redux-logger react-redux
