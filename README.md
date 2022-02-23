@@ -68,3 +68,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### **REDUX NOTES**
+
+#### **Why Redux?**
+
+> - Good for managing large state
+> - Useful for sharing data between components
+> - Predictable state management using the 3 principels
+> - Redux allows react state to be more scalable
+
+#### **THE 3 PRINCIPLES**
+
+> - Single source of truth
+    One single big object that describes the entire state of the app
+> - State is read only
+    Not modifying the object and prevents unexpected errors.
+> - Changes using pure functions
+    Pure functions : Receives an input and always return a predictable output.
+
+#### **REDUX FLOW**
+
+1. Action:
+    Something that user does such as clicking on a button or a dropdown menu
+2. Root Reducer:
+    Reducer is simply a pure function that receives an input, which is the action and creates an output.
+3. Store:
+    The output from the reducer in redux which is the entire state of the app is called store.
+4. DOM Changes:
+    When the store gets updated, react notices the changes and make changes to the VLA (View Layer)
+
+#### **FLUX PATTERN**
+
+> ACTION -> DISPATCHER -> STORE -> VIEW
