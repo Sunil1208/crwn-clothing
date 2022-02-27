@@ -109,3 +109,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 #### **DEPLOY TO HEROKU**
 
     heroku create <app_name> --buildpack https://github.com/mars/create-react-app-buildpack.git
+
+#### **UPDATE THE CHANGES TO HEROKU AFTER DEPLOYMENT**
+
+    git push heroku master
