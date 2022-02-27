@@ -105,3 +105,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 #### **INSTALL REDUX**
 
     npm install redux redux-logger react-redux
+
+#### **DEPLOY TO HEROKU**
+
+    heroku create <app_name> --buildpack https://github.com/mars/create-react-app-buildpack.git
