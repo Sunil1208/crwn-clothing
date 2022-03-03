@@ -37,6 +37,8 @@ class App extends React.Component {
       } else {
         setCurrentUser(userAuth);
       }
+      // Required to run only once and it's done already
+      // addCollectionAndDocuments('collections', collectionsArray.map(({ title, items}) => ({ title, items })))
     })
   }
 
@@ -68,7 +70,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 })
 
 const mapDispatchToProps = dispatch => ({
