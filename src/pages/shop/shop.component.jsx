@@ -3,12 +3,19 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { firestore, converCollectionsSnapshotToMap } from '../../firebase/firebase.utils';
+import { updateCollections } from '../../redux/shop/shop.actions';
 
 import CollectionsOverview from '../../components/collection-overview/collection-overview.component'
 import CollectionPage from '../collection/collection.component';
-import { updateCollections } from '../../redux/shop/shop.actions';
+import WithSpinner from '../../components/with-spinner/with-spinner.component';
+
+const CollectionOverviewWithSpinner = WithSpinner(CollectionsOverview);
+const CollectionsPageWithSpinner = WithSpinner(CollectionPage);
 
 class ShopPage extends React.Component{
+    state = {
+        loading: true
+    }
     unsubscribeFromSnapShot = null;
 
     componentDidMount() {
@@ -19,21 +26,25 @@ class ShopPage extends React.Component{
             const collectionsMap = converCollectionsSnapshotToMap(snapshot);
             updateCollections(collectionsMap);
             // console.log('colection map is ', collectionsMap)
+            this.setState({loading: false});
         })
     }
 
     render() {
-        const { match, } = this.props;
+        const { match } = this.props;
+        const { loading } = this.state;
         return (
             <div className='shop-page'>
                 <Route 
                     exact 
                     path={`${match.path}`} 
-                    component={CollectionsOverview}
+                    // component={CollectionsOverview}
+                    render={(props) => <CollectionOverviewWithSpinner isLoading={loading} {...props} />}
                 />
                 <Route 
                     path={`${match.path}/:collectionId`}
-                    component={CollectionPage}
+                    // component={CollectionPage}
+                    render={(props) => <CollectionsPageWithSpinner isLoading={loading} {...props} />}
                 />
             </div>
         )
