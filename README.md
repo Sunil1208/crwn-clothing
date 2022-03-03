@@ -149,3 +149,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 > - We get a documentSnapshot object from our documentReference object.
 > - The documentSnapshot object allows us to check if a document exists at this query using the .exists property which returns a boolean.
 > - We can also get the actual properties on the object by calling the .data() method, which returns us a JSON object of the document.
+
+#### **QuerySnapshot**
+
+> - We get a querySnapshot object from our collectionReference object.
+> - We can check if there are any documents in the collection by calling the .empty property which returns a boolean.
+> - We can get all the documents in the collection by calling the .docs property. It returns an array of our documents as documentSnapshot objects.
