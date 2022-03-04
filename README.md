@@ -155,3 +155,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 > - We get a querySnapshot object from our collectionReference object.
 > - We can check if there are any documents in the collection by calling the .empty property which returns a boolean.
 > - We can get all the documents in the collection by calling the .docs property. It returns an array of our documents as documentSnapshot objects.
+
+#### **Redux Thunk**
+
+> - A piece of middleware that allows us to fire functions.
+> - If redux-thunk middleware is enabled, any time you attempt to dispacth a function instead of an object, the middleware will call that function with dispatch method itself as the first argument.
