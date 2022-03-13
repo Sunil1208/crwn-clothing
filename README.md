@@ -160,3 +160,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 > - A piece of middleware that allows us to fire functions.
 > - If redux-thunk middleware is enabled, any time you attempt to dispacth a function instead of an object, the middleware will call that function with dispatch method itself as the first argument.
+
+### **Redux Saga**
+
+> - 
